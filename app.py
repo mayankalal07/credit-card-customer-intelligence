@@ -34,8 +34,7 @@ recommendations = {
                 2: "Premium Travel Card",
                 3: "Grocery & Retail Cashback",
                 4: "E-Commerce Cashback Card"
-            }
-from groq import Groq
+}
 
 import os
 
@@ -43,19 +42,7 @@ client = Groq(
     api_key=os.getenv("GROQ_API_KEY")
 )
 
-response = client.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=[
-        {
-            "role": "user",
-            "content": "Explain customer segmentation in one paragraph."
-        }
-    ]
-)
 
-print(
-    response.choices[0].message.content
-)
 if page == "Overview":
 
     st.subheader("Project Overview")
